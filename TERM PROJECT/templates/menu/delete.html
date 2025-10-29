@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Menu Item</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Delete {{ item.name }}?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ item.name }}"?</p>
+        <button type="submit">Yes, Delete</button>
+        <a href="{% url 'menu_list' %}">No, Cancel</a>
+    </form>
+</body>
+</html>
